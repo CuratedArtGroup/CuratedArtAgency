@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Edge function sets the caa_geo cookie before any page script runs.
+[[edge_functions]]
+  path = "/*"
+  function = "geo"
